@@ -7,8 +7,7 @@ const LogInForm = () => {
   return (
     <LogInWrapper>
       <h1>Log In</h1>
-      <Input label="Username" type="text" onChange={emptyFoo} required={true} />
-      <Input label="Email" type="email" onChange={emptyFoo} required={true} />
+      <Input label="LogIn" type="text" onChange={emptyFoo} required={true} />
       <Input
         label="Password"
         type="password"
