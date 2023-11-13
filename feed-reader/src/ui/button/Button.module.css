@@ -1,0 +1,16 @@
+.button-container {
+  display: block;
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 30px;
+  border: none;
+  transition: 0.3s;
+  border-radius: 3px;
+}
+
+.button-container:hover {
+  transform: scale(1.05);
+  background-color: var(--secondary-accent-color);
+}
