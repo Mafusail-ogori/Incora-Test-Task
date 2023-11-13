@@ -1,0 +1,32 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 50%;
+}
+
+.input {
+  padding: 15px 0px;
+  border: 1px solid var(--secondary-text-color);
+  color: var(--secondary-text-color);
+  border-radius: 3px;
+  transition: 0.3s;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.input:focus {
+  border: 1px solid var(--accent-color);
+  color: var(--primary-text-color);
+}
+
+.label {
+  color: var(--primary-text-color);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.required {
+  color: var(--required);
+}
