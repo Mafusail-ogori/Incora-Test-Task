@@ -1,10 +1,11 @@
+import { ChangeEvent } from "react";
 import classes from "./Input.module.css";
 
 const Input: React.FC<{
   required?: boolean;
   type: string;
   label: string;
-  onChange: () => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }> = (props) => {
   return (
     <div className={classes["input-container"]}>

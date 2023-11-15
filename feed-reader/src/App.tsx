@@ -1,9 +1,11 @@
+import { Provider } from "react-redux";
 import LogInPage from "./pages/LogInPage";
+import store from "../src/store/index";
 const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <LogInPage />
-    </div>
+    </Provider>
   );
 };
 
