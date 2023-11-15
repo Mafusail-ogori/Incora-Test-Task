@@ -1,19 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { user } from "../models/user";
+import { User } from "../models/User";
 
-const userInitialState: user = {
-  login: "",
-  password: "",
-};
+const userInitialState: User[] = [];
 
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    user: userInitialState,
+    users: userInitialState,
   },
   reducers: {
-    verifyUser(state, action: PayloadAction<{ user: user }>) {
-      state.user = action.payload.user;
+    getUsers(state, action: PayloadAction<{ users: User[] }>) {
+      state.users = action.payload.users;
     },
   },
 });

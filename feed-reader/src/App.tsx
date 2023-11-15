@@ -1,8 +1,8 @@
-import LogInForm from "./components/LogInForm";
+import LogInPage from "./pages/LogInPage";
 const App = () => {
   return (
     <div>
-      <LogInForm />
+      <LogInPage />
     </div>
   );
 };
