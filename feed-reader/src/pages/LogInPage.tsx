@@ -16,9 +16,9 @@ const LogInPage = () => {
   }, [dispatch]);
 
   return (
-    <main className={classes["page-container"]}>
+    <section className={classes["page-container"]}>
       <LogInForm users={users} />
-    </main>
+    </section>
   );
 };
 
