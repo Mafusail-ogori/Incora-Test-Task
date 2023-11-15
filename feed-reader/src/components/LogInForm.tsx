@@ -3,17 +3,21 @@ import LogInWrapper from "../ui/uiWrappers/LogInWrapper";
 import Button from "../ui/button/Button";
 import { FormEvent, useState } from "react";
 import { User } from "../models/User";
+import { useNavigate } from "react-router-dom";
 
 const LogInForm: React.FC<{ users: User[] }> = (props) => {
   const [login, setLogin] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const navigation = useNavigate();
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const user = props.users.find((user) => user.username === login);
 
-    console.log(user, login, password);
+    if (user) {
+      navigation("/feeds");
+    }
   };
 
   return (

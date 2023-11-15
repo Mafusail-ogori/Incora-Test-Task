@@ -1,0 +1,9 @@
+.feed-container {
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+}
+
+.feed-title {
+  font-size: 20px;
+  font-weight: 500;
+}

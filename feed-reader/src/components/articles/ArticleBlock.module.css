@@ -17,3 +17,19 @@
   font-size: 20px;
   font-weight: 500;
 }
+
+.grid-container {
+  grid-template-rows: 0fr;
+  display: grid;
+  transition: grid-template-rows 500ms;
+}
+
+.description {
+  overflow: hidden;
+}
+
+.article-detail {
+  color: var(--secondary-text-color);
+  font-size: 16px;
+  font-weight: 300;
+}

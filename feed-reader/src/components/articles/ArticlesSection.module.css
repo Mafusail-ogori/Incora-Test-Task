@@ -1,0 +1,5 @@
+.articles-container {
+  list-style: none;
+  width: 80%;
+  overflow: scroll;
+}

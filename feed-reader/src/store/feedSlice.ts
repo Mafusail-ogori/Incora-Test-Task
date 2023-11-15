@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Feed } from "../models/Feed";
 
 const feedInitialState: Feed = {
+  creator: "",
   articles: [],
 };
 

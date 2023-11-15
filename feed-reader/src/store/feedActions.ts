@@ -1,8 +1,8 @@
-import Parser from "rss-parser";
 import { AppDispatch } from ".";
 import { Feed } from "../models/Feed";
 import { feedActions } from "./feedSlice";
 import axios from "axios";
+import Parser from "rss-parser";
 
 export const parseFeedData = (url: string) => {
   return async (dispatch: AppDispatch) => {
@@ -12,6 +12,7 @@ export const parseFeedData = (url: string) => {
         const feed = await parser.parseURL(url);
 
         return {
+          creator: feed.title,
           articles: feed.items.map((item) => ({
             title: item.title || "",
             body: item.content || "",
