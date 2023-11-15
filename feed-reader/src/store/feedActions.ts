@@ -3,7 +3,6 @@ import { AppDispatch } from ".";
 import { Feed } from "../models/Feed";
 import { feedActions } from "./feedSlice";
 import axios from "axios";
-import env from "react-dotenv";
 
 export const parseFeedData = (url: string) => {
   return async (dispatch: AppDispatch) => {
@@ -40,11 +39,14 @@ export const fetchUserFeedData = (userId: number) => {
   return async (dispatch: AppDispatch) => {
     const fetchFeeds = async () => {
       try {
-        const response = await axios.get(env.GET_USER_FEED_API_URL + userId, {
-          headers: {
-            Accept: "application/json",
-          },
-        });
+        const response = await axios.get(
+          `https://jsonplaceholder.typicode.com/posts?userId=${userId}`,
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
         return response.data;
       } catch (error) {
         throw new Error("Could not fetch user feeds " + error);

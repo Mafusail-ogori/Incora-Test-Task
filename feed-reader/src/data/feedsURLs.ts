@@ -1,0 +1,5 @@
+export const feedURLs = [
+  "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+  "https://www.reddit.com/.rss",
+  "https://www.mobileworldlive.com/latest-stories/feed/",
+];

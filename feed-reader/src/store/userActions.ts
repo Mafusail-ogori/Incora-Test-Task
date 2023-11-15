@@ -1,33 +1,38 @@
-import { User } from "../models/User";
 import { AppDispatch } from ".";
 import axios from "axios";
-import env from "react-dotenv";
 import { userActions } from "./userSlice";
+import { User } from "../models/User";
+import { filterObject } from "../utils/filterUserData";
 
 export const getUsersData = () => {
   return async (dispatch: AppDispatch) => {
     const getData = async () => {
       try {
-        const response = await axios.get(env.POST_USER_API_URL, {
-          headers: {
-            Accept: "application/json",
-          },
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/users",
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
+        return response.data.map((user: any) => {
+          return filterObject<User>(user, ["id", "name", "username"]);
         });
-        return response.data;
       } catch (error) {
-        throw new Error("Couldn't post user data " + error);
+        throw new Error("Couldn't get user data " + error);
       }
     };
 
     try {
-      const usersData = await getData();
+      const usersData: User[] = await getData();
       dispatch(
         userActions.getUsers({
           users: usersData || [],
         })
       );
     } catch (error) {
-      throw new Error("Error posting user data " + error);
+      throw new Error("Error getting user data " + error);
     }
   };
 };
