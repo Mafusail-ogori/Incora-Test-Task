@@ -7,9 +7,9 @@
 
 .input {
   padding: 15px 0px;
-  border: 1px solid var(--secondary-text-color);
+  border: none;
+  border-bottom: 1px solid var(--secondary-text-color);
   color: var(--secondary-text-color);
-  border-radius: 3px;
   transition: 0.3s;
   outline: none;
   font-size: 16px;
@@ -17,7 +17,7 @@
 }
 
 .input:focus {
-  border: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
   color: var(--primary-text-color);
 }
 

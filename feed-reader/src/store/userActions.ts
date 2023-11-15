@@ -1,13 +1,14 @@
+import { User } from "../models/User";
 import { AppDispatch } from ".";
-import { userActions } from "./userSlice";
 import axios from "axios";
 import env from "react-dotenv";
+import { userActions } from "./userSlice";
 
-export const postUserData = () => {
+export const getUsersData = () => {
   return async (dispatch: AppDispatch) => {
-    const postData = async () => {
+    const getData = async () => {
       try {
-        const response = await axios.post(env.POST_API_URL, {
+        const response = await axios.get(env.POST_USER_API_URL, {
           headers: {
             Accept: "application/json",
           },
@@ -19,6 +20,12 @@ export const postUserData = () => {
     };
 
     try {
+      const usersData = await getData();
+      dispatch(
+        userActions.getUsers({
+          users: usersData || [],
+        })
+      );
     } catch (error) {
       throw new Error("Error posting user data " + error);
     }
